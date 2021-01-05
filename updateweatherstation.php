@@ -15,7 +15,7 @@ if (!defined('DB_SERIES')) {
 }
 
 $content = json_encode($_GET);
-$stationID = upper($_SERVER["X_ARCA_STATION_ID"] ?: "XUNKNOWN");
+$stationID = strtoupper($_SERVER["X_ARCA_STATION_ID"] ?: "XUNKNOWN");
 
 # Save data for verification
 file_put_contents('latest.json', $content);
