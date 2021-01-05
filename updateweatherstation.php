@@ -39,5 +39,5 @@ function storeData($content, $stationID, $dbURL, $dbName, $dbSeries) {
   );
 }
 
-storeData($content, $stationID, DB_URL, DB_NAME, DB_SERIES);
+storeData(json_decode($content), $stationID, DB_URL, DB_NAME, DB_SERIES);
 ?>
