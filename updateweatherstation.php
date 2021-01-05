@@ -20,7 +20,7 @@ $stationID = $_SERVER["X_ARCA_STATION_ID"] ?: "XUNKNOWN";
 # Save data for verification
 file_put_contents('latest.json', $content);
 
-function storeData($content, $dbURL, $dbName, $dbSeries) {
+function storeData($content, $stationID, $dbURL, $dbName, $dbSeries) {
   $opts = [
     'http' => [
       'method' => "POST",
@@ -39,5 +39,5 @@ function storeData($content, $dbURL, $dbName, $dbSeries) {
   );
 }
 
-storeData($content, DB_URL, DB_NAME, DB_SERIES);
+storeData($content, $stationID, DB_URL, DB_NAME, DB_SERIES);
 ?>
